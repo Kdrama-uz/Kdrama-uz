@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-DRAMA.UZ - YouTube'dan Koreya Seriallari</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #e50914;
+            --korean-red: #ff375e;
+            --youtube-red: #ff0000;
+            --dark: #0f0f0f;
+            --light: #ffffff;
+            --gray: #b3b3b3;
+        }
+        
+        body {
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(to bottom, rgba(15,15,15,0.95) 0%, transparent 100%);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--korean-red);
+            font-size: 28px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        .youtube-btn {
+            background: var(--youtube-red);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s;
+        }
+        
+        .youtube-btn:hover {
+            background: #cc0000;
+        }
+        
+        /* Video Sections */
+        .video-section {
+            padding: 50px 0;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: white;
+            border-left: 4px solid var(--korean-red);
+            padding-left: 15px;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .video-card {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-thumbnail {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #ffd700;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            border-top: 1px solid #333;
+            text-align: center;
+            color: var(--gray);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-play-circle"></i> K-DRAMA.UZ
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">K-Drama Seriallari O'zbek Tilida</h1>
+            <p class="hero-description">Eng sara Koreya seriallarini YouTube kanalimizdan o'zbek tilidagi subtitrlar bilan tomosha qiling</p>
+            <a href="YOUR_YOUTUBE_CHANNEL_LINK" class="youtube-btn" target="_blank">
+                <i class="fab fa-youtube"></i> YouTube Kanalinga O'tish
+            </a>
+        </div>
+    </section>
+
+    <!-- Video Sections -->
+    <div class="container">
+        <!-- Popular Dramas -->
+        <section class="video-section">
+            <h2 class="section-title">Mashhur Seriallar</h2>
+            <div class="video-grid">
+                <!-- Video 1 - O'Zgartiring -->
+                <div class="video-card" onclick="playYouTubeVideo('abc123')">
+                    <img src="https://img.youtube.com/vi/abc123/hqdefault.jpg" class="video-thumbnail" alt="Goblin">
+                    <div class="video-info">
+                        <h3 class="video-title">Goblin - 1-qism</h3>
+                        <div class="video-meta">
+                            <span>72:15</span>
+                            <span class="rating">★ 4.8</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 2 - O'Zgartiring -->
+                <div class="video-card" onclick="playYouTubeVideo('def456')">
+                    <img src="https://img.youtube.com/vi/def456/hqdefault.jpg" class="video-thumbnail" alt="Descendants">
+                    <div class="video-info">
+                        <h3 class="video-title">Descendants - 1-qism</h3>
+                        <div class="video-meta">
+                            <span>68:30</span>
+                            <span class="rating">★ 4.7</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 3 - O'Zgartiring -->
+                <div class="video-card" onclick="playYouTubeVideo('ghi789')">
+                    <img src="https://img.youtube.com/vi/ghi789/hqdefault.jpg" class="video-thumbnail" alt="Squid Game">
+                    <div class="video-info">
+                        <h3 class="video-title">Squid Game - 1-qism</h3>
+                        <div class="video-meta">
+                            <span>55:20</span>
+                            <span class="rating">★ 4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="position: relative; width: 90%; max-width: 800px;">
+            <button onclick="closeVideo()" style="position: absolute; top: -50px; right: 0; background: var(--korean-red); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 4px;">
+                <i class="fas fa-times"></i> Yopish
+            </button>
+            <iframe id="youtubePlayer" width="100%" height="450" src="" frameborder="0" allowfullscreen style="border-radius: 10px;"></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 K-DRAMA.UZ - YouTube'dan Koreya Seriallari O'zbek Tilida</p>
+        </div>
+    </footer>
+
+    <script>
+        // YouTube kanal linkini o'rnatish
+        const youtubeChannelLink = 'YOUR_YOUTUBE_CHANNEL_LINK_HERE';
+        document.querySelector('.youtube-btn').href = youtubeChannelLink;
+        
+        // YouTube video o'ynatish
+        function playYouTubeVideo(videoId) {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('youtubePlayer');
+            
+            player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            modal.style.display = 'flex';
+        }
+        
+        // Video yopish
+        function closeVideo() {
+            const modal = document.getElementById('videoModal');
+            const player = document.getElementById('youtubePlayer');
+            
+            player.src = '';
+            modal.style.display = 'none';
+        }
+        
+        // Modal tashqarisiga bosilganda yopish
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideo();
+            }
+        });
+    </script>
+</body>
+</html>
